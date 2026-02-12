@@ -110,29 +110,29 @@ $$
 , can be rewritten as the three equations
 
 $$
-\frac{E_y^{i, j, k+\frac{1}{2}} - E_y^{i, j, k-\frac{1}{2}}}{\Delta z} - \frac{E_z^{i, j+\frac{1}{2}, k} - E_z^{i, j-\frac{1}{2}, k}}{\Delta y} = \frac{B_x^{i, j, k}(t_{n+1}) - B_x^{i, j, k}(t_n)}{\Delta t}
+\frac{E_y^{i, j, k+\frac{1}{2}} - E_y^{i, j, k-\frac{1}{2}}}{\Delta z} - \frac{E_z^{i, j+\frac{1}{2}, k} - E_z^{i, j-\frac{1}{2}, k}}{\Delta y} = - \frac{B_x^{i, j, k}(t_{n+1}) - B_x^{i, j, k}(t_n)}{\Delta t}
 $$
 
 $$
-\frac{E_z^{i+\frac{1}{2}, j, k} - E_z^{i-\frac{1}{2}, j, k}}{\Delta x} - \frac{E_x^{i, j, k+\frac{1}{2}} - E_x^{i, j, k-\frac{1}{2}}}{\Delta z} = \frac{B_y^{i, j, k}(t_{n+1}) - B_y^{i, j, k}(t_n)}{\Delta t}
+\frac{E_z^{i+\frac{1}{2}, j, k} - E_z^{i-\frac{1}{2}, j, k}}{\Delta x} - \frac{E_x^{i, j, k+\frac{1}{2}} - E_x^{i, j, k-\frac{1}{2}}}{\Delta z} = - \frac{B_y^{i, j, k}(t_{n+1}) - B_y^{i, j, k}(t_n)}{\Delta t}
 $$
 
 $$
-\frac{E_x^{i, j+\frac{1}{2}, k} - E_x^{i, j-\frac{1}{2}, k}}{\Delta y} - \frac{E_y^{i+\frac{1}{2}, j, k} - E_y^{i-\frac{1}{2}, j, k}}{\Delta x} = \frac{B_z^{i, j, k}(t_{n+1}) - B_z^{i, j, k}(t_n)}{\Delta t}
+\frac{E_x^{i, j+\frac{1}{2}, k} - E_x^{i, j-\frac{1}{2}, k}}{\Delta y} - \frac{E_y^{i+\frac{1}{2}, j, k} - E_y^{i-\frac{1}{2}, j, k}}{\Delta x} = - \frac{B_z^{i, j, k}(t_{n+1}) - B_z^{i, j, k}(t_n)}{\Delta t}
 $$
 
 . This directly leads to an expression for the three vector fields $B_x$, $B_y$ and $B_z$ at the time-step $t_{n+1}$, based only on information we have at time-step $t_n$. The following three equations therefore are our update-equations for the B-field at the next timestep
 
 $$
-B_x^{i, j, k}(t_{n+1}) = B_z^{i, j, k}(t_n) + \Delta t \left( \frac{E_y^{i, j, k+\frac{1}{2}} - E_y^{i, j, k-\frac{1}{2}}}{\Delta z} - \frac{E_z^{i, j+\frac{1}{2}, k} - E_z^{i, j-\frac{1}{2}, k}}{\Delta y} \right)
+B_x^{i, j, k}(t_{n+1}) = B_z^{i, j, k}(t_n) - \Delta t \left( \frac{E_y^{i, j, k+\frac{1}{2}} - E_y^{i, j, k-\frac{1}{2}}}{\Delta z} - \frac{E_z^{i, j+\frac{1}{2}, k} - E_z^{i, j-\frac{1}{2}, k}}{\Delta y} \right)
 $$
 
 $$
-B_y^{i, j, k}(t_{n+1}) = B_y^{i, j, k}(t_n) + \Delta t \left( \frac{E_z^{i+\frac{1}{2}, j, k} - E_z^{i-\frac{1}{2}, j, k}}{\Delta x} - \frac{E_x^{i, j, k+\frac{1}{2}} - E_x^{i, j, k-\frac{1}{2}}}{\Delta z} \right)
+B_y^{i, j, k}(t_{n+1}) = B_y^{i, j, k}(t_n) - \Delta t \left( \frac{E_z^{i+\frac{1}{2}, j, k} - E_z^{i-\frac{1}{2}, j, k}}{\Delta x} - \frac{E_x^{i, j, k+\frac{1}{2}} - E_x^{i, j, k-\frac{1}{2}}}{\Delta z} \right)
 $$
 
 $$
-B_z^{i, j, k}(t_{n+1}) = B_z^{i, j, k}(t_n) + \Delta t \left( \frac{E_x^{i, j+\frac{1}{2}, k} - E_x^{i, j-\frac{1}{2}, k}}{\Delta y} - \frac{E_y^{i+\frac{1}{2}, j, k} - E_y^{i-\frac{1}{2}, j, k}}{\Delta x} \right)
+B_z^{i, j, k}(t_{n+1}) = B_z^{i, j, k}(t_n) - \Delta t \left( \frac{E_x^{i, j+\frac{1}{2}, k} - E_x^{i, j-\frac{1}{2}, k}}{\Delta y} - \frac{E_y^{i+\frac{1}{2}, j, k} - E_y^{i-\frac{1}{2}, j, k}}{\Delta x} \right)
 $$
 
 . Similarly, Ampère's law can be approximated in the following three equations
