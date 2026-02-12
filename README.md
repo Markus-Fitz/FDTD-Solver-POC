@@ -160,7 +160,7 @@ E_y^{i, j, k}(t_{n+1}) = E_y^{i, j, k}(t_n) + \frac{\Delta t}{\epsilon_0} \left(
 $$
 
 $$
-E_z^{i, j, k}(t_{n+1}) = E_z^{i, j, k}(t_n) +  \frac{\Delta t}{\epsilon_0} \left( \frac{1}{\mu_0} \left( \frac{B_x^{i, j+\frac{1}{2}, k} - B_x^{i, j-\frac{1}{2}, k}}{\Delta y} - \frac{B_y^{i+\frac{1}{2}, j, k} - B_y^{i-\frac{1}{2}, j, k}}{\Delta x} \right) - J_z^{i, j, k} \right)
+E_z^{i, j, k}(t_{n+1}) = E_z^{i, j, k}(t_n) + \frac{\Delta t}{\epsilon_0} \left( \frac{1}{\mu_0} \left( \frac{B_x^{i, j+\frac{1}{2}, k} - B_x^{i, j-\frac{1}{2}, k}}{\Delta y} - \frac{B_y^{i+\frac{1}{2}, j, k} - B_y^{i-\frac{1}{2}, j, k}}{\Delta x} \right) - J_z^{i, j, k} \right)
 $$
 
 . 
